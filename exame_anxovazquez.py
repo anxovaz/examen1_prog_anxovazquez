@@ -73,7 +73,7 @@ print(validacion_caracteres("Contrasinal1."))
 
 def agregar_usuario(lista):
     bucle = True #variable para controlar o bucle
-    valido=True #se é valido
+    valido = True #se é valido
     while bucle==True: #si é correcta
         print('Escribe "" para saír.')
         usuario=str(input("Introduce nombre de usuario: "))
@@ -107,5 +107,5 @@ def agregar_usuario(lista):
 
 
 print(agregar_usuario(usuarios)) #chama a función pasandolle a lista do 1er exercicio
-
+print(usuarios)
 
