@@ -71,7 +71,7 @@ def validacion_caracteres(contrasinal): #funciona igual que os 2 exercicios ante
 
 print(validacion_caracteres("Contrasinal1."))
 
-def exercicio6(lista):
+def agregar_usuario(lista):
     bucle = True #variable para controlar o bucle
     valido=False #se é valido
     while bucle==True: #si é correcta
@@ -101,6 +101,6 @@ def exercicio6(lista):
     return valido #devolve se e válido ou non
 
 
-print(exercicio6(usuarios)) #chama a función pasandolle a lista do 1er exercicio
+print(agregar_usuario(usuarios)) #chama a función pasandolle a lista do 1er exercicio
 
 
