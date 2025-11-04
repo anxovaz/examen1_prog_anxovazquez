@@ -1,4 +1,4 @@
-def exercicio1(lista): #recibe a lista
+def validacion_usuario(lista): #recibe a lista
     usuario_correcto=False #variable para medir se os credenciales son correctos
     usuario = str(input("Introduce usuario: ")) #garda o usuario pedido
     contraseña = str(input("Introduce contraseña: ")) #garda o contrasinal pedido
@@ -14,18 +14,18 @@ def exercicio1(lista): #recibe a lista
 
 
 usuarios=[["usuario1", "contrasinal1"],["usuario2", "contrasinal2"], ["usuario3", "contrasinal3"]]
-print(exercicio1(usuarios)) #chama á función pasandolle a lista usuarios e imprime o resultado do booleano
+print(validacion_usuario(usuarios)) #chama á función pasandolle a lista usuarios e imprime o resultado do booleano
 
-def exercicio2(contrasinal):
+def longitud_contrasenha(contrasinal):
     if len(contrasinal)>=8: #devuelve a lonxitde do contrasinal
         return True #devolve true
     else:
         return False #devolve false
 
-print(exercicio2("contrasinal")) #chama a función e imprime o booleano
+print(longitud_contrasenha("contrasinal")) #chama a función e imprime o booleano
 
 
-def exercicio3(contrasinal): #recibe o contrasinal
+def validacion_maiuscula(contrasinal): #recibe o contrasinal
     maius="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ" #string con todaas as maiúscula
     maiuscula=False #variable que se cambiará si hay maiúsculas
     #bucle que recorre toda a contrasinal e a cada caracter xenera outro bucle que recorre as maiusculas
@@ -39,9 +39,9 @@ def exercicio3(contrasinal): #recibe o contrasinal
 
     return maiuscula #devolve true ou false
 
-print(exercicio3("Contrasinal")) #chama á funcion e imprime True ou False
+print(validacion_maiuscula("Contrasinal")) #chama á funcion e imprime True ou False
 
-def exercicio4(contrasinal): #funciona igual que o exercicio anterior pero en vez de unha cadea con todas as letras en maiusculas unha cos numeros do 0 ao 9
+def validacion_numeros(contrasinal): #funciona igual que o exercicio anterior pero en vez de unha cadea con todas as letras en maiusculas unha cos numeros do 0 ao 9
     numeros="123456789" #numeros
     numero=False
     for i in contrasinal:
@@ -54,9 +54,9 @@ def exercicio4(contrasinal): #funciona igual que o exercicio anterior pero en ve
 
     return numero
 
-print(exercicio4("Contrasinal1"))
+print(validacion_numeros("Contrasinal1"))
 
-def exercicio5(contrasinal): #funciona igual que os 2 exercicios anteriores pero con unha cadea cos caracteres especiais
+def validacion_caracteres(contrasinal): #funciona igual que os 2 exercicios anteriores pero con unha cadea cos caracteres especiais
     caracteres="!@#$%&*_."
     car_especial=False
     for i in contrasinal:
@@ -69,7 +69,7 @@ def exercicio5(contrasinal): #funciona igual que os 2 exercicios anteriores pero
 
     return car_especial
 
-print(exercicio5("Contrasinal1."))
+print(validacion_caracteres("Contrasinal1."))
 
 def exercicio6(lista):
     bucle = True #variable para controlar o bucle
@@ -83,10 +83,10 @@ def exercicio6(lista):
         contrasinal=str(input("Introduce contrasinal: "))
 
         #uso as funcións do exercicio anterior para verificar o contrasinal
-        if exercicio2(contrasinal) == True:
-            if exercicio3(contrasinal) == True: #maiuscula
-                if exercicio4(contrasinal) == True: #numeros
-                    if exercicio5(contrasinal) == True: #caracteres
+        if longitud_contrasenha(contrasinal) == True:
+            if validacion_maiuscula(contrasinal) == True: #maiuscula
+                if validacion_numeros(contrasinal) == True: #numeros
+                    if validacion_caracteres(contrasinal) == True: #caracteres
                         valido = True
                         lista.append([usuario, contrasinal])
                     else:
