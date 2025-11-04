@@ -73,7 +73,7 @@ print(validacion_caracteres("Contrasinal1."))
 
 def agregar_usuario(lista):
     bucle = True #variable para controlar o bucle
-    valido=False #se é valido
+    valido=True #se é valido
     while bucle==True: #si é correcta
         print('Escribe "" para saír.')
         usuario=str(input("Introduce nombre de usuario: "))
@@ -83,20 +83,25 @@ def agregar_usuario(lista):
         contrasinal=str(input("Introduce contrasinal: "))
 
         #uso as funcións do exercicio anterior para verificar o contrasinal
-        if longitud_contrasenha(contrasinal) == True:
-            if validacion_maiuscula(contrasinal) == True: #maiuscula
-                if validacion_numeros(contrasinal) == True: #numeros
-                    if validacion_caracteres(contrasinal) == True: #caracteres
-                        valido = True
-                        lista.append([usuario, contrasinal])
-                    else:
-                        print("Falta caracter especial no contrasinal, volve a intentalo.")
-                else:
-                    print("Falta número no contrasinal, volve a intentalo.")
-            else:
-                print("Falta maiuscula no contrasinal, volve a intentalo.")
-        else:
+        if longitud_contrasenha(contrasinal) != True:
             print("Introduce 8 caracteres ao menos no contrasinal, volve a intentarlo.")
+            valido = False
+        
+        if validacion_maiuscula(contrasinal) != True:
+            print("Falta maiuscula no contrasinal, volve a intentalo.")
+            valido = False
+
+        if validacion_caracteres(contrasinal) != True:
+            print("Falta caracter especial no contrasinal, volve a intentalo.")
+            valido = False
+
+        if validacion_numeros(contrasinal) != True:
+            print("Falta número no contrasinal, volve a intentalo.")
+            valido = False
+
+        if valido == True: #se nunca entrou nos ifs anteriores
+            lista.append([usuario, contrasinal]) #agrega o usuario á lista
+
 
     return valido #devolve se e válido ou non
 
